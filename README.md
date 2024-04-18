@@ -16,7 +16,7 @@
    
    Install Python 3.11.8 from: https://www.python.org/downloads/release/python-3118/  
    Windows: Scroll down to the section 'Files' and select `Windows installer (64-bit)`  
-   macOS: croll down to the section 'Files' and select `macOS 64-bit universal2 installer`
+   macOS: Scroll down to the section 'Files' and select `macOS 64-bit universal2 installer`
    
 
 **2. VSC Installation**   
