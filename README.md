@@ -36,7 +36,7 @@
 
    macOS:`python3 -m venv .venv source `
    > [!TIP]
->  Confirm with `yes` a notification 'We noticed a new virtual environment....'
+>  Confirm with `yes` a notification 'We noticed a new virtual environment....'  
    > Don't foget the dot before the second venv `.venv`
 
 **6. Activate the virtual environment**   
