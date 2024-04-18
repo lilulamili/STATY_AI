@@ -1,0 +1,14 @@
+[server]
+port = 8075
+
+[client]
+showErrorDetails = true
+
+[theme]
+primaryColor="#38bcf0"
+backgroundColor="#FFFFFF"
+secondaryBackgroundColor="#f2f2f7"
+textColor="#262730"
+font="sans serif"
+
+[global]
