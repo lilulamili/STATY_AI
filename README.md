@@ -25,37 +25,47 @@
 **3. Ollama Installation**  
    Install Ollama from: https://ollama.com/
 
-**4. Get 'STATY.AI' ready**   
-  Download 'STATY.AI' from https://github.com/lilulamili/STATY_AI to a folder on your PC (press the green button `<> Code` and select `Download ZIP`. 
-    Extract all files. Open VSCode. Go to the `File` menu, select `Open Folder`, and then navigate to the project folder you just created (the one where the file are).
-  ` „Do you trust the Author of this Folder” – click “yes”`
+**4. Download 'STATY.AI'**   
+  Download 'STATY.AI' as a ZIP file from https://github.com/lilulamili/STATY_AI to a folder on your PC. Click the zip file and extract it.  
+  > [!TIP]
+> To download STATY.AI, press the green button `<> Code` and select `Download ZIP`. 
+      
+    
 
-**5. create a virtual environment**   
+**5. Get 'STATY.AI' ready**  
+   Open VSCode. Go to the `File` menu, select `Open Folder`, and then navigate to the project folder you just created (the one where the file are).  
+   `„Do you trust the Author of this Folder” – click “yes”`
+
+**6. create a virtual environment**   
    Locate the `Terminal` panel in VScode (usually at the bottom of the window). If it's not visible, go to the View menu and select Terminal. Type the following command in the terminal to create a virtual environment:
 
    Windows: `py -3 -m venv .venv`
 
-   macOS:`python3 -m venv .venv source `
+   macOS:`python3 -m venv .venv source `  
+   
+   `We noticed a new virtual environment....   click "yes"`
+   
    > [!TIP]
->  Confirm with `yes` a notification 'We noticed a new virtual environment....'  
-   > Don't foget the dot before the second venv `.venv`
+   > Don't foget the dot before the second venv `.venv`  
+> Windows: In case of a policy challenge type the following command in the terminal:   
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
-**6. Activate the virtual environment**   
+**7. Activate the virtual environment**   
   Type the following command in the terminal:
 
   Windows:`.venv\Scripts\activate`
 
   macOS:`source .venv/bin/activate` 
 
-**7. Install all application components**   
+**8. Install all application components**   
    Type the following command in the terminal: `pip install -r requirements.txt`
 
-**8. Run STATY.AI**   
-   Type the following command in the terminal: `streamlit run staty_ai.py`
+**9. Run STATY.AI**   
+   Type the following command in the terminal: `streamlit run staty_ai.py`  
+   The app will open in your default browser `http://localhost:8075/`
+   
 
-> [!TIP]
-> Windows: In case of a policy challenge type the following command in the terminal:   
-`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
 
 
 
