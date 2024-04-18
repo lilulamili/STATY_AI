@@ -13,13 +13,11 @@
 > [!TIP]
 > Make sure to check the checkbox labeled "Add Python ... to PATH" during the installation process.  
   This ensures you can easily run Python commands from your terminal later.  
-  T
-  
+   
    Install Python 3.11.8 from: https://www.python.org/downloads/release/python-3118/  
-   Windows: Select `Windows installer (64-bit)`  
-   macOS: Select `macOS 64-bit universal2 installer`
-   > [!TIP]
-   > The Python installation files are at the bottom of the page in the section 'Files'
+   Windows: Scroll down to the section 'Files' and select `Windows installer (64-bit)`  
+   macOS: croll down to the section 'Files' and select `macOS 64-bit universal2 installer`
+   
 
 **2. VSC Installation**   
        Install Visual Studio Code by pressing the big blue button from: https://code.visualstudio.com/
