@@ -1,9 +1,7 @@
 # STATY_AI
 
 
-STATY.AI offers a user-friendly interface for downloading 
-
-and running open access Large Language Models (LLMs) locally on your PC.
+STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.
 
 
 1. Python Installation
