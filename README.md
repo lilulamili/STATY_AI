@@ -16,8 +16,8 @@
 **3. Ollama Installation**  
    Install Ollama from: https://ollama.com/
 
-**4. Get 'staty_ai' ready**   
-  Download 'STATY_AI' to a folder on your PC. Open VSCode. Go to the `File` menu, select `Open Folder`, and then navigate to the project folder you just created.
+**4. Get 'STATY.AI' ready**   
+  Download 'STATY.AI' to a folder on your PC. Open VSCode. Go to the `File` menu, select `Open Folder`, and then navigate to the project folder you just created.
   ` „Do you trust the Author of this Folder” – click “yes”`
 
 **5. create a virtual environment**   
