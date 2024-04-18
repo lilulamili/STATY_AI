@@ -1,11 +1,19 @@
 # STATY.AI
 
 
-**STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.**
+**STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.**  
 
+   
+
+**Getting started**
+
+   
 
 **1. Python Installation**    
-   Make sure to check the checkbox labeled "Add Python ... to PATH" during the installation process. This ensures you can easily run Python commands from your terminal later.   
+> [!TIP]
+> Make sure to check the checkbox labeled "Add Python ... to PATH" during the installation process.  
+  This ensures you can easily run Python commands from your terminal later.
+  
    Install Python 3.11.8 from: https://www.python.org/downloads/release/python-3118/  
    Windows: Select `Windows installer (64-bit)`  
    macOS: Select `macOS 64-bit universal2 installer`
@@ -26,11 +34,13 @@
    Windows: `py -3 -m venv .venv`
 
    macOS:`python3 -m venv .venv source `
+   > [!TIP]
+   > Don't foget the dot before the second venv `.venv`
 
 **6. Activate the virtual environment**   
   Type the following command in the terminal:
 
-  Windows:.`venv\Scripts\activate`
+  Windows:`.venv\Scripts\activate`
 
   macOS:`source .venv/bin/activate` 
 
@@ -40,7 +50,9 @@
 **8. Run STATY.AI**   
    Type the following command in the terminal: `streamlit run staty_ai.py`
 
-   **Windows: In case of a policy challenge type the following command in the terminal: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser**
+> [!TIP]
+> Windows: In case of a policy challenge type the following command in the terminal:   
+`Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
 
 
