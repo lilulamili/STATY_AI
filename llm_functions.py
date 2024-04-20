@@ -269,6 +269,7 @@ def ram_based_models(total_ram):
     "sauerkrautlm-7b-hero": "German text generation model with 7 billion parameters, trained on a massive dataset of German text (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO).",
     "gemma:2b": "A 2-billion parameter lightweight text model from Google DeepMind, ideal for various tasks where a smaller, efficient model is preferred (https://ollama.com/library/gemma).",
     "gemma:7b": "A member of the Gemma family from Google DeepMind, featuring 7 billion parameters for more complex text processing tasks (https://ollama.com/library/gemma).",
+    "llama3:8b": "A member of the Llama 3 family of models developed by Meta Inc (https://ollama.com/library/llama3).",
     "qwen:0.5b": "A compact text model with only 0.5 billion parameters, suitable for tasks on resource-constrained environments (https://ollama.com/library/qwen).",
     "llava:7b": "Combines a vision encoder and Vicuna for general-purpose visual and language understanding (https://ollama.com/library/llava).",
     "llava:13b": "Combines a vision encoder and Vicuna for general-purpose visual and language understanding (https://ollama.com/library/llava).",
@@ -292,7 +293,7 @@ def ram_based_models(total_ram):
         recommended_models = ["gemma:2b"]#, "wizard-math","llama-pro:latest"]  
     
     if total_ram >= 7.9:
-        recommended_models.extend(["gemma:7b","mistral:latest","sauerkrautlm-7b-hero","llama2:latest","codellama:latest"])#, "wizard-math","llama-pro:latest"]  
+        recommended_models.extend(["llama3:8b","gemma:7b","mistral:latest","sauerkrautlm-7b-hero","llama2:latest","codellama:latest"])#, "wizard-math","llama-pro:latest"]  
     if total_ram >= 15.9:
         recommended_models.extend(["llama2:13b", "codellama:13b"])  
     if total_ram >= 60:
