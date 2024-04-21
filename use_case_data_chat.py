@@ -94,7 +94,7 @@ def app():
             upload_container=st.container(border=True)
             upload_container.markdown("**Upload your data**")
             uploaded_data = upload_container.file_uploader("File upload", 
-                                    type=[".docx",".pdf", "txt" , "csv",".html"],accept_multiple_files=True)
+                                    type=[".docx",".pdf", "txt" , "csv",".html"],accept_multiple_files=True,on_change=change_check_splitting_state)
     
             #delete temp_dir if exists!
             temp_dir = os.path.join(os.getcwd(), "temp_data")  
