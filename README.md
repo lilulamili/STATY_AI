@@ -41,7 +41,7 @@
 
    Windows: `py -3 -m venv .venv`
 
-   macOS:`python3 -m venv .venv source `  
+   macOS:`python3 -m venv .venv `  
    
    `We noticed a new virtual environment....   click "yes"`
    
