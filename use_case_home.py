@@ -2,7 +2,7 @@ import streamlit as st
 import llm_functions as lfc
 import platform
 import base64
-
+from PIL import Image
 #----------------------------------------------------------------------------------------------
 
 def app():
@@ -21,11 +21,13 @@ def app():
     st.markdown("STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.")    
    # lfc.typewriter(staty_info, speed=5)  
     st.markdown("Managing LLMs is done using <a href='https://ollama.com' style='color:#38bcf0'>Ollama</a>.", unsafe_allow_html=True) 
-
+    
+    """
     file_ = open("default_data/staty_ai.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
     file_.close()
+    """
 
     image_style = """
     <style>
@@ -35,31 +37,31 @@ def app():
         </style>
         """
 
-
+    """
     # Display the animated gif
     st.markdown(f"{image_style}", unsafe_allow_html=True)
     st.markdown(
         f'<img src="data:image/gif;base64,{data_url}" alt="staty ai">',
         unsafe_allow_html=True,
     )
-    
+    """
+    col1, col2 = st.columns([3,2])
+    with col1:
+        staty_video =open("default_data/staty_ai_intro.mp4", 'rb')        
+        staty_video_bytes=staty_video.read()
+        st.video(staty_video_bytes)
 
     
-    st.markdown("---") 
-        
-       
+             
     st.markdown
-    #staty_video =open("default_data/Staty_web.mp4", 'rb')        
-    #staty_video_bytes=staty_video.read()
-    #st.video(staty_video_bytes)
+    
 
     #-INFO----------------------------------------------------------------------------------
     staty_expander=st.expander('**STATY.AI - get more info**')    
     with staty_expander: 
         os_name = platform.system()
         st.write("")
-        st.markdown("**LLMs**")
-        st.write("LLMs are downloaded from Ollama. For full list of available models please check https://ollama.com/library.   \n Once Ollama is set up, it's recommended to download at least two models.")
+        lfc.staty_ai_info()
         if os_name=="Windows":            
             st.write("The models will be downloaded to: <span style='background-color: #f2f2f2;'>/usr/share/ollama/.ollama/models</span>", unsafe_allow_html=True)
         elif os_name=="Darwin":
@@ -74,7 +76,7 @@ def app():
        
         st.write("")
         st.markdown("**Background and motivation**")
-        st.markdown("The ongoing digital transformation places new demands on students' data literacy skills.   \n Our overarching goal is to provide students with a comprehensive interdisciplinary understanding and skills to design and apply intelligent models.")
+        st.markdown("Our overarching goal is to provide students with a comprehensive interdisciplinary understanding and skills to design and apply intelligent models.")
 
         st.write("")        
         st.markdown("**Disclaimer**")

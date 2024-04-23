@@ -117,8 +117,7 @@ def app():
     with staty_expander: 
 
         st.write("")
-        st.markdown("**LLMs**")
-        st.write("LLMs are downloaded from Ollama. For full list of available models please check https://ollama.com/library.   \n Once Ollama is set up, it's recommended to download at least two models.")
+        lfc.staty_ai_info()
         if os_name=="Windows":            
             st.write("The models will be downloaded to: <span style='background-color: #f2f2f2;'>/usr/share/ollama/.ollama/models</span>", unsafe_allow_html=True)
         elif os_name=="Darwin":
@@ -133,7 +132,7 @@ def app():
        
         st.write("")
         st.markdown("**Background and motivation**")
-        st.markdown("The ongoing digital transformation places new demands on students' data literacy skills.   \n Our overarching goal is to provide students with a comprehensive interdisciplinary understanding and skills to design and apply intelligent models.")
+        st.markdown("Our overarching goal is to provide students with a comprehensive interdisciplinary understanding and skills to design and apply intelligent models.")
 
         st.write("")        
         st.markdown("**Disclaimer**")

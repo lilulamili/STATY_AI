@@ -136,6 +136,22 @@ def select_model_sidebar():
 
 
 #-----------------------------------------------------------------------------------------------------------
+def staty_ai_info():
+    st.markdown("**LLMs**")
+    st.markdown("""                    
+         LLMs are downloaded from Ollama. For a full list of available models, please check https://ollama.com/library.   
+                    
+        Once Ollama is set up, you might be wondering which model to download first. Here's why **"gemma:2b"** is a good choice:
+                      
+        **"gemma:2b"** is a relatively lightweight model, making it ideal for getting started. This translates to faster download times, lower resource consumption, and potentially smoother operation, especially if you have limited computational power.   
+       
+        While "gemma:2b" is an excellent starting point, consider exploring other models once you're comfortable. Ollama's library offers a diverse range of models tailored to specific use cases. The best choice ultimately depends on your requirements (e.g., task complexity, desired accuracy, CPU/GPU power).        
+        
+                  """)
+
+
+#-----------------------------------------------------------------------------------------------------------
+
 # model details settings expander
 def model_settings(available_ollama_models,llm_name):
    
