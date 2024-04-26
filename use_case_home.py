@@ -7,31 +7,25 @@ from PIL import Image
 
 def app():
 
+    #check if Ollama is running
+    lfc.ollama_check_home()
+
     # settings sidebar
     lfc.settings_sidebar()
-    
-    staty_info="""
-    Keep your AI chat private. 
-    Open-source AI, made simple. 
-    Download and use LLMs locally.
-    """
+       
+    staty_info="Keep your AI chat private. Open-source AI, made simple.Download and use LLMs locally."
     lfc.typewriter(staty_info, speed=5)      
     st.markdown("")  
+   
     
     st.markdown("STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.")    
    # lfc.typewriter(staty_info, speed=5)  
     st.markdown("Managing LLMs is done using <a href='https://ollama.com' style='color:#38bcf0'>Ollama</a>.", unsafe_allow_html=True) 
     st.markdown("")
     
-    show_start_video=st.toggle("**Show STATY.AI get started video?**", value=False)
-    if show_start_video:
-        col1, col2 = st.columns([3,2])
-        with col1:
-            staty_video =open("default_data/staty_ai_intro.mp4", 'rb')        
-            staty_video_bytes=staty_video.read()
-            st.video(staty_video_bytes)
-    else: 
-               
+    
+    show_gif=st.toggle("Prefer a short animated guide (GIF) for getting started?", value=False)
+    if show_gif:
         file_ = open("default_data/staty_ai.gif", "rb")
         contents = file_.read()
         data_url = base64.b64encode(contents).decode("utf-8")
@@ -44,15 +38,21 @@ def app():
             }
             </style>
             """
-       
-
-        # Display the animated gif
-        
+        # Display the animated gif        
         st.markdown(f"{image_style}", unsafe_allow_html=True)
         st.markdown(
             f'<img src="data:image/gif;base64,{data_url}" alt="staty ai">',
             unsafe_allow_html=True,
         )
+    else:
+        col1, col2 = st.columns([3,2])
+        with col1:
+            staty_video =open("default_data/staty_ai_intro.mp4", 'rb')        
+            staty_video_bytes=staty_video.read()
+            st.video(staty_video_bytes)
+   
+               
+        
       
              
     st.markdown("")

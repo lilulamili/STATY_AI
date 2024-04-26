@@ -185,6 +185,22 @@ def model_settings(available_ollama_models,llm_name):
      
     return model_temp,system_promt
 #----------------------------------------------------------------------------------------------
+# Check if Ollama is installed and running (_home)
+def ollama_check_home():
+    
+    try:
+        available_ollama_models = ollama.list()["models"]
+    except Exception as e:
+        st.error("""
+                Oops! It seems there's an issue with Ollama.  
+                Please ensure that Ollama is installed and running. 
+                You can download Ollama from https://ollama.com.  
+                After starting Ollama, don't forget to reload this page.  
+                If you need assistance, consider checking out the 'STATY.AI let's get started' video.
+                 """)
+  
+     
+#----------------------------------------------------------------------------------------------
 # Check if Ollama is installed and running
 def ollama_check():
     try:
