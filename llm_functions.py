@@ -343,11 +343,11 @@ def create_donut_chart(total_val, free_val,fig_size,font_size, plot_para):
     sizes = [free_val, used_val]
     labels = ['Free: '  + str(round(free_val, 2))+ " GB", 'Used: ' + str(round(used_val, 2))]
     colors = ['#D0F0C0', '#38bcf0']  # Light green for free space, white for used space
-
+    
     # Plot
-    plt.figure(figsize=(fig_size, fig_size))  # Adjust size as needed
-    plt.pie(sizes, labels=labels, colors=colors, startangle=90)
-    plt.rcParams.update({'font.size': font_size})
+    plt.figure(figsize=(fig_size, fig_size))  
+    plt.pie(sizes, labels=labels, colors=colors, startangle=90,textprops = {"fontsize": font_size})
+   # plt.rcParams.update({'font.size': font_size})
     # Draw a white circle at the center to create a donut chart effect
     centre_circle = plt.Circle((0,0),0.70,fc='white')
     fig = plt.gcf()
@@ -355,7 +355,7 @@ def create_donut_chart(total_val, free_val,fig_size,font_size, plot_para):
 
     # Add a text at the center showing total disk space
     plt.text(0, 0, f'{plot_para}\n Total:\n{round(total_val,2)} GB', ha='center', va='center', fontsize=font_size)
-
+  
     return(fig)
 
 # --------------------------------------------------------------------------------------------------------------

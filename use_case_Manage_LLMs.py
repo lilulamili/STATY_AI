@@ -43,13 +43,14 @@ def app():
     download_expander=st.expander("**Download LLMs**",expanded=False)
     with download_expander: 
         a4,a5=st.columns(2)
-        with a5: 
-            #Disk Space     
-            st.pyplot(lfc.create_donut_chart(total_disk_space, free_disk_space,fig_size=1,font_size=4,plot_para='Disk Space'),use_container_width=False)    
         with a4: 
             #RAM
-            st.pyplot(lfc.create_donut_chart(total_ram, available_ram,fig_size=1,font_size=4,plot_para='RAM'),use_container_width=False)        
-
+            st.pyplot(lfc.create_donut_chart(total_ram, available_ram,fig_size=1,font_size=4,plot_para='RAM'),clear_figure=True,use_container_width=False)        
+            
+        with a5:
+            #Disk Space 
+            st.pyplot(lfc.create_donut_chart(total_disk_space, free_disk_space,fig_size=1,font_size=4,plot_para='Disk Space'),clear_figure=True,use_container_width=False)    
+        
         
         if final_model_suggestion:
             a4,a5=st.columns(2)
