@@ -2,11 +2,10 @@
 port = 8075
 
 #----------------
-# Insert a # before each of the following 3 lines to make your application accessible in your home network
-[browser]
-serverAddress = "localhost"
-port = 8075
-#-------------
+# Remove a # before each of the following 3 lines if don't want your app to be accessible in your home network.
+#[browser]
+#serverAddress = "localhost"
+#port = 8075
 
 [client]
 showErrorDetails = true
