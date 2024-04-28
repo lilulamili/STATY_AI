@@ -1,13 +1,14 @@
 # STATY.AI
 
+**STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.**   
 
-**STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.**  
+**STATY.AI offers two options to get started:**
 
-   
+**Source Code:** This guide provides detailed instructions for installing and running STATY.AI from the source code. This approach offers more flexibility and customization but requires some technical setup.  
+**Portable Version:** For a user-friendly, ready-to-run option, consider downloading the portable version of STATY.AI. Information on obtaining the portable version can be found [here](https://github.com/lilulamili/STATY_AI/wiki/STATY.AI).
 
-**Getting started**
 
-   
+**Getting started with source code** 
 
 **1. Python Installation**    
 > [!TIP]
@@ -17,7 +18,6 @@
    Install Python 3.11.8 from: https://www.python.org/downloads/release/python-3118/  
    Windows: Scroll down to the section 'Files' and select `Windows installer (64-bit)`  
    macOS: Scroll down to the section 'Files' and select `macOS 64-bit universal2 installer`
-   
 
 **2. VSC Installation**   
        Install Visual Studio Code by pressing the big blue button from: https://code.visualstudio.com/
@@ -30,8 +30,6 @@
   > [!TIP]
 > To download STATY.AI, press the green button `<> Code` and select `Download ZIP`. 
       
-    
-
 **5. Get 'STATY.AI' ready**  
    Open VSCode. Go to the `File` menu, select `Open Folder`, and then navigate to the project folder you just created (the one where the file are).  
    `„Do you trust the Author of this Folder” – click “yes”`
@@ -63,9 +61,6 @@
 **9. Run STATY.AI**   
    Type the following command in the terminal: `streamlit run staty_ai.py`  
    The app will open in your default browser `http://localhost:8075/`
-
-   
-**STATY.AI portable version:** For a user-friendly, ready-to-run option, consider downloading the portable version of STATY.AI. Information on obtaining the portable version can be found [here](https://github.com/lilulamili/STATY_AI/wiki/STATY.AI).
 
 
 
