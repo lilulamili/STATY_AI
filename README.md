@@ -63,8 +63,9 @@
 **9. Run STATY.AI**   
    Type the following command in the terminal: `streamlit run staty_ai.py`  
    The app will open in your default browser `http://localhost:8075/`
-   
 
+   
+**STATY.AI portable version:** For a user-friendly, ready-to-run option, consider downloading the portable version of STATY.AI. Information on obtaining the portable version can be found [here](https://github.com/lilulamili/STATY_AI/wiki/STATY.AI).
 
 
 
