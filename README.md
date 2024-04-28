@@ -4,11 +4,16 @@
 
 **STATY.AI offers two options to get started:**
 
-**Source Code:** This guide provides detailed instructions for installing and running STATY.AI from the source code. This approach offers more flexibility and customization but requires some technical setup.  
-**Portable Version:** For a user-friendly, ready-to-run option, consider downloading the portable version of STATY.AI. Information on obtaining the portable version can be found [here](https://github.com/lilulamili/STATY_AI/wiki/STATY.AI).
+* **Source Code:** This guide provides detailed instructions for installing and running STATY.AI from the source code. 
+* **Portable Version:** Information on obtaining a user-friendly, ready-to-run portable version can be found [here](https://github.com/lilulamili/STATY_AI/wiki/STATY.AI).
+
+> [!TIP]
+> * 8GB RAM minimum is recommended. Response speed scales with CPU/GPU power.
+> * Expect a slight delay for the first AI response due to initialization.
+> * 'Chat with your data' is an experimental feature with best performance on high-end PCs.
 
 
-**Getting started with source code** 
+## Getting started with source code 
 
 **1. Python Installation**    
 > [!TIP]
