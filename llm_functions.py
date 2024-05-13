@@ -91,7 +91,7 @@ def select_model_sidebar():
     # User selection of the LLM
     llm_name = st.sidebar.selectbox("Choose model", [""] + model_names)
     if llm_name == "" and menu_option =="Chat":    
-        if model_names is not None: st.info("Select LLM model from the 'Choose model' menu on the sidebar.")
+        if model_names !=[]: st.info("Select LLM model from the 'Choose model' menu on the sidebar.")
         chat_info_expander=st.expander("More Info on Model Selection",expanded=False)
         
         with chat_info_expander:
@@ -101,7 +101,7 @@ def select_model_sidebar():
                 "\n\n For chats in German, consider employing 'SauerkrautLM' (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO)."  
                 "\n\n You can download and delete models from the 'Home' menu.") 
     elif llm_name == "" and menu_option =="Chat with my data":    
-        if model_names is not None:st.info("Select LLM model from the 'Choose model' menu on the sidebar." )
+        if model_names !=[]:st.info("Select LLM model from the 'Choose model' menu on the sidebar." )
         chat_info_expander=st.expander("More Info on Chatting with Your Data",expanded=False)
         with chat_info_expander:
                 st.markdown("")
