@@ -26,7 +26,12 @@ def app():
 
     # check available LLMs
     available_ollama_models=lfc.ollama_check()
-    model_names = [model["name"] for model in available_ollama_models]
+
+   
+    if available_ollama_models is None:
+        model_names=[]    
+    else:
+        model_names = [model["name"] for model in available_ollama_models]
     
     # Find model proposals       
     (model_proposals,models_dictionary)=lfc.ram_based_models(total_ram)    

@@ -80,13 +80,18 @@ def select_model_sidebar():
     menu_option=st.session_state['main_navigation']
 
     # Read avaiable models from the Ollama default folder
-    available_ollama_models=ollama_check()    
-    model_names = [model["name"] for model in available_ollama_models]
+    available_ollama_models=ollama_check()  
+    if available_ollama_models is None:
+        model_names=[]    
+    else:
+        model_names = [model["name"] for model in available_ollama_models]
+      
+    
     
     # User selection of the LLM
     llm_name = st.sidebar.selectbox("Choose model", [""] + model_names)
     if llm_name == "" and menu_option =="Chat":    
-        st.info("Select LLM model from the 'Choose model' menu on the sidebar.")
+        if model_names is not None: st.info("Select LLM model from the 'Choose model' menu on the sidebar.")
         chat_info_expander=st.expander("More Info on Model Selection",expanded=False)
         
         with chat_info_expander:
@@ -96,7 +101,7 @@ def select_model_sidebar():
                 "\n\n For chats in German, consider employing 'SauerkrautLM' (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO)."  
                 "\n\n You can download and delete models from the 'Home' menu.") 
     elif llm_name == "" and menu_option =="Chat with my data":    
-        st.info("Select LLM model from the 'Choose model' menu on the sidebar." )
+        if model_names is not None:st.info("Select LLM model from the 'Choose model' menu on the sidebar." )
         chat_info_expander=st.expander("More Info on Chatting with Your Data",expanded=False)
         with chat_info_expander:
                 st.markdown("")
@@ -203,14 +208,17 @@ def ollama_check_home():
 #----------------------------------------------------------------------------------------------
 # Check if Ollama is installed and running
 def ollama_check():
+
+    available_ollama_models=[]
+
     try:
         available_ollama_models = ollama.list()["models"]
     except Exception as e:
         st.error("Please make sure you have Ollama installed and running!  You can download Ollama from https://ollama.com.  \n Please reload this page after starting Ollama.   ")
         st.stop()
 
-    if len(available_ollama_models) < 1:
-            st.error("**You don't have any models yet.** Install some suitable for your RAM.")
+    if available_ollama_models is None:
+        st.error("**You don't have any models yet.** Install some suitable for your RAM.")
                
     return available_ollama_models  
 
