@@ -81,27 +81,31 @@ def select_model_sidebar():
 
     # Read avaiable models from the Ollama default folder
     available_ollama_models=ollama_check()  
+    
     if available_ollama_models is None:
         model_names=[]    
     else:
         model_names = [model["name"] for model in available_ollama_models]
       
-    
-    
+   
     # User selection of the LLM
     llm_name = st.sidebar.selectbox("Choose model", [""] + model_names)
     if llm_name == "" and menu_option =="Chat":    
-        if model_names !=[]: st.info("Select LLM model from the 'Choose model' menu on the sidebar.")
+        if model_names !=[]:
+            st.info("Select LLM model from the 'Choose model' menu on the sidebar.")
+        
         chat_info_expander=st.expander("More Info on Model Selection",expanded=False)
         
         with chat_info_expander:
                 st.markdown("")
                 st.markdown(
-                "\n\n For chats in English, consider employing models from the 'gemma' family (https://ollama.com/library/gemma) or 'mistral' (https://ollama.com/library/mistral)."  
-                "\n\n For chats in German, consider employing 'SauerkrautLM' (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO)."  
-                "\n\n You can download and delete models from the 'Home' menu.") 
+                "\n\n For chats in English, consider employing 'gemma' built by Google DeepMind (https://ollama.com/library/gemma), 'llama3' developed by Meta Inc (https://ollama.com/library/llama3) or 'mistral' built by a french comapny Mistral AI (https://ollama.com/library/mistral)."  
+                "\n\n For chats in German, consider employing 'discolm-mfto-german' (https://huggingface.co/Blizado/discolm-mfto-7b-german-v0.1) or 'SauerkrautLM' (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO)."  
+                "\n\n You can download and delete models from the 'Manage LLMs' menu.") 
     elif llm_name == "" and menu_option =="Chat with my data":    
-        if model_names !=[]:st.info("Select LLM model from the 'Choose model' menu on the sidebar." )
+        if model_names !=[]:
+            st.info("Select LLM model from the 'Choose model' menu on the sidebar." )
+        
         chat_info_expander=st.expander("More Info on Chatting with Your Data",expanded=False)
         with chat_info_expander:
                 st.markdown("")
@@ -128,13 +132,13 @@ def select_model_sidebar():
                 st.markdown("")
                 st.write("**Model Selection**")
                 st.markdown( """
-                For chats in English, consider employing models from the 'gemma' family (https://ollama.com/library/gemma) or 'mistral' (https://ollama.com/library/mistral).  
+                For chats in English, consider employing 'gemma' built by Google DeepMind (https://ollama.com/library/gemma), 'llama3' developed by Meta Inc (https://ollama.com/library/llama3) or 'mistral' built by a french comapny Mistral AI (https://ollama.com/library/mistral).  
                 
-                For chats in German, consider employing 'SauerkrautLM' (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO).  
+                For chats in German, consider employing 'discolm-mfto-german' (https://huggingface.co/Blizado/discolm-mfto-7b-german-v0.1) or 'SauerkrautLM' (https://huggingface.co/VAGOsolutions/SauerkrautLM-7b-HerO).  
                 
-                You can download and delete models from the 'Home' menu.
+                You can download and delete models from the 'Manage LLms' menu.
                 
-                Please choose a model first. You can find the option in the sidebar labeled 'Choose model'
+                
                 """)  
     
     return menu_option, available_ollama_models,llm_name
@@ -200,10 +204,9 @@ def ollama_check_home():
                 Oops! It seems there's an issue with Ollama.  
                 Please ensure that Ollama is installed and running. 
                 You can download Ollama from https://ollama.com.  
-                After starting Ollama, don't forget to reload this page.  
-                If you need assistance, consider checking out the 'STATY.AI let's get started' video.
+                After starting Ollama, don't forget to reload this page.                  
                  """)
-  
+    
      
 #----------------------------------------------------------------------------------------------
 # Check if Ollama is installed and running
@@ -217,8 +220,9 @@ def ollama_check():
         st.error("Please make sure you have Ollama installed and running!  You can download Ollama from https://ollama.com.  \n Please reload this page after starting Ollama.   ")
         st.stop()
 
-    if available_ollama_models is None:
-        st.error("**You don't have any models yet.** Install some suitable for your RAM.")
+    
+    if available_ollama_models==[]:
+        st.error("**You don't have any models yet.** Install some suitable for your RAM from the menu 'Manage LLMs/Download LLMs'. \n\n Here's why **'gemma:2b'** is a good choice:**'gemma:2b'** is a relatively lightweight model, making it ideal for getting started. This translates to faster download times, lower resource consumption, and potentially smoother operation, especially if you have limited computational power.")
                
     return available_ollama_models  
 
@@ -323,6 +327,7 @@ def ram_based_models(total_ram):
     "codellama:13b": "Code generation model, boasting 13 billion parameters built on top of Llama 2 from Meta (https://ollama.com/library/codellama).",
     "codellama:34b": "Powerful code generation model, boasting 34 billion parameters built on top of Llama 2 from Meta (https://ollama.com/library/codellama)",
     "codellama:70b": "Very powerful code generation model, boasting 70 billion parameters built on top of Llama 2 from Meta (https://ollama.com/library/codellama).",
+    "cas/discolm-mfto-german": "Experimental merge of pre-trained language models (https://ollama.com/cas/discolm-mfto-german).",
     }
 
        
@@ -333,7 +338,7 @@ def ram_based_models(total_ram):
         recommended_models = ["gemma:2b"]#, "wizard-math","llama-pro:latest"]  
     
     if total_ram >= 7.9:
-        recommended_models.extend(["llama3:8b","gemma:7b","mistral:latest","sauerkrautlm-7b-hero","llama2:latest","codellama:latest"])#, "wizard-math","llama-pro:latest"]  
+        recommended_models.extend(["llama3:8b","gemma:7b","mistral:latest","cas/discolm-mfto-german","sauerkrautlm-7b-hero","llama2:latest","codellama:latest"])#, "wizard-math","llama-pro:latest"]  
     if total_ram >= 15.9:
         recommended_models.extend(["llama2:13b", "codellama:13b"])  
     if total_ram >= 60:

@@ -2,6 +2,7 @@ import streamlit as st
 import llm_functions as lfc
 import platform
 import base64
+import os
 from PIL import Image
 #----------------------------------------------------------------------------------------------
 
@@ -9,7 +10,7 @@ def app():
 
     #check if Ollama is running
     lfc.ollama_check_home()
-
+    
     # settings sidebar
     lfc.settings_sidebar()
        
@@ -20,7 +21,7 @@ def app():
     
     st.markdown("STATY.AI offers a user-friendly interface for downloading and running open access Large Language Models (LLMs) locally on your PC.")    
    # lfc.typewriter(staty_info, speed=5)  
-    st.markdown("Managing LLMs is done using <a href='https://ollama.com' style='color:#38bcf0'>Ollama</a>.", unsafe_allow_html=True) 
+    st.markdown("Managing LLMs is done using <a href='https://ollama.com' style='color:#38bcf0'>Ollama</a>. If you need assistance, consider checking out the 'STATY.AI let's get started' video.", unsafe_allow_html=True)
     st.markdown("")
     
     
@@ -64,7 +65,7 @@ def app():
         st.write("")
         lfc.staty_ai_info()
         if os_name=="Windows":            
-            st.write("The models will be downloaded to: <span style='background-color: #f2f2f2;'>/usr/share/ollama/.ollama/models</span>", unsafe_allow_html=True)
+            st.write(f"The models will be downloaded to: <span style='background-color: #f2f2f2;'>C:\\Users\\{os.environ['USERNAME']}\\ .ollama\\models", unsafe_allow_html=True)
         elif os_name=="Darwin":
             st.write("The models will be downloaded to: <span style='background-color: #f2f2f2;'>~/.ollama/models</span>", unsafe_allow_html=True)
         elif os_name=="Linux":

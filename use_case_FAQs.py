@@ -1,6 +1,7 @@
 import streamlit as st
 import llm_functions as lfc
 import platform
+import os
 
 def app():
     
@@ -37,8 +38,8 @@ def app():
         
         with st.expander("Where are the models stored on my PC?"):
             os_name = platform.system()
-            if os_name=="Windows":            
-                st.write("The models will be downloaded to: <span style='background-color: #f2f2f2;'>/usr/share/ollama/.ollama/models</span>", unsafe_allow_html=True)
+            if os_name=="Windows":    
+                 st.write(f"The models will be downloaded to: <span style='background-color: #f2f2f2;'>C:\\Users\\{os.environ['USERNAME']}\\ .ollama\\models", unsafe_allow_html=True)
             elif os_name=="Darwin":
                 st.write("The models will be downloaded to: <span style='background-color: #f2f2f2;'>~/.ollama/models</span>", unsafe_allow_html=True)
             elif os_name=="Linux":
